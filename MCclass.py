@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.stats import norm
-from Finstats import import_stock_data
+import Finstats
 
 
 
@@ -95,7 +95,7 @@ class MonteCarlo:
             predList = list (predicted)
             over = [(i*100)/predicted0 for i in predList if ((i-predicted0)*100)/predicted0 >= higherthan]
             less = [(i*100)/predicted0 for i in predList if ((i-predicted0)*100)/predicted0 < higherthan]
-            elif on == 'value': 
+            if on == 'value': 
                 predicted = predicted.iloc[-1]
                 predList = list(predicted)
                 over = [i for i in predList if i >= higherthan]

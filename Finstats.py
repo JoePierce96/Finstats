@@ -7,7 +7,7 @@ ibm_data = pd.read_csv('IBMtimeseries.csv', dtype=str)
 
 def import_stock_data(tickers, start = '2010-1-1'):
     """
-    stock data import helper function
+    stock data import helper func
     imports n stock data
     """
     stock_data = pd.DataFrame()
@@ -23,7 +23,7 @@ def import_stock_data(tickers, start = '2010-1-1'):
     return stock_data
      
 def deannualise(annual_rate, periods=365):
-    """
+    """from
     Helper function to de-annualise yearly rates
     (May move into future bond class)
     """
