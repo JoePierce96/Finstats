@@ -12,10 +12,10 @@ def import_stock_data(tickers, start = '2010-1-1'):
     """
     stock_data = pd.DataFrame()
 
-    # returns a one column DF if only one ticker parsed elsewise returns a DF of n cols
+    # returns a one column  if only one ticker parsed elsewise returns a DF of n cols
     if len([tickers]) == 1:
         stock_data[tickers] = wb.DataReader(tickers, data_source='yahoo', start = start)['Adj Close']
-        stock_data = pd.DataFrame(data)
+        stock_data = pd.Series(data)
     else:
         for ticker in tickers:
             stock_data[ticker] = wb.DataReader(ticker, data_source='yahoo', start = start)['Adj Close']
