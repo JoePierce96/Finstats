@@ -1,9 +1,10 @@
-import MCclass as mc
+from MCclass import MonteCarlo
+import MonteCarlo
 import pandas as pd
 from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 from pandas_datareader import data as wb
-ibm_data = pd.read_csv('IBMtimeseries.csv', dtype=str)
+
 
 def import_stock_data(tickers, start = '2010-1-1'):
     """
@@ -39,16 +40,13 @@ def get_risk_free_rate():
     daily = annualised.apply(deannualise)
 
 
-
-
-
-
 def main():
     """
     Driver code
     """
     ticks = ["IBM"]
-    monte = mc.MonteCarlo(ticks)
+    market = ["GSPC"]
+    monte = MonteCarlo(ticks, market, 1000, 1000)
     monte.RunSims()
     
 
